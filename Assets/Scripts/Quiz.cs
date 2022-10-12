@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,7 +14,7 @@ public class Quiz : MonoBehaviour {
     [SerializeField] Sprite correctAnswerSprite;
 
     void Start() {
-        DisplayQuestion();
+        GetNextQuestion();
     }
     public void setButtonState(bool state) {
         for (int i = 0; i < answerButtons.Length; i++) {
@@ -21,6 +22,19 @@ public class Quiz : MonoBehaviour {
             button.interactable = state;
         }
     }
+    void GetNextQuestion() {
+        setButtonState(true);
+        SetButtonSpriteDefault();
+        DisplayQuestion();
+    }
+
+    private void SetButtonSpriteDefault() {
+        for (int i = 0; i < answerButtons.Length; i++) {
+            Image buttonImage = answerButtons[i].GetComponent<Image>();
+            buttonImage.sprite = defaultAnswerSprite;
+        }
+    }
+
     public void DisplayQuestion() {
         questionText.text = question.GetQuestion();
 
