@@ -700,8 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa41c93f00c608b4c869c785ef45def3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionText: {fileID: 0}
-  question: {fileID: 0}
+  questionText: {fileID: 1300953330}
+  question: {fileID: 11400000, guid: 99b628680d5a50f44b765f72c134bb5b, type: 2}
   answerButtons:
   - {fileID: 1948749167}
   - {fileID: 863056097}

@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1d5f31df6e54a4fbef52c38d9fead2, type: 3}
   m_Name: New Question 4
   m_EditorClassIdentifier: 
-  Question: What was the first commercially successful video game?
+  question: What year was the first prototype for a home-based video game console
+    developed?
+  answers:
+  - 1967
+  - 1972
+  - 1975
+  - 1977
+  correctAnswerIndex: 0
