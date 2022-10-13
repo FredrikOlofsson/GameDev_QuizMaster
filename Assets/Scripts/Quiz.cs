@@ -61,9 +61,10 @@ public class Quiz : MonoBehaviour {
     }
 
     public void DisplayQuestion() {
+        Debug.LogWarning("In Display!");
         questionText.text = question.GetQuestion();
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < answerButtons.Length; i++) {
             TextMeshProUGUI childButtonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
             childButtonText.text = question.GetAnswers(i);
         }
@@ -79,6 +80,7 @@ public class Quiz : MonoBehaviour {
             buttonText.text = "False! it was: " + question.GetAnswers(correctAnswerIndex);
             Image correctButtonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             correctButtonImage.sprite = correctAnswerSprite;
+            Debug.LogWarning("Not the right answer!");
         }
     }
     public void OnAnswerSelected(int index) {

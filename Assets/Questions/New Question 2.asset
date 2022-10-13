@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1d5f31df6e54a4fbef52c38d9fead2, type: 3}
   m_Name: New Question 2
   m_EditorClassIdentifier: 
-  Question: What was the first commercially successful video game?
+  question: What is the fictional language in The Sims?
+  answers:
+  - Simian
+  - Simlish
+  - Simali
+  - Simento
+  correctAnswerIndex: 1
