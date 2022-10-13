@@ -1,21 +1,46 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour {
+    [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionSO question;
+
+    [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
-    int correctAnswerIndex;
+    [SerializeField] int correctAnswerIndex;
+    bool hasAnswerdEarly;
+
+    [Header("Button Colors")]
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
 
+    [Header("Timer")]
+    [SerializeField] Image timerImage;
+    Timer timer;
+
     void Start() {
+        correctAnswerIndex = question.GetCorrectAnswerIndex();
         GetNextQuestion();
+        timer = FindObjectOfType<Timer>();
     }
+    void Update() {
+        timerImage.fillAmount = timer.fillFraction;
+        if (timer.loadNextQuestion) {
+            hasAnswerdEarly = false;
+            GetNextQuestion();
+            timer.loadNextQuestion = false;
+        } else if (hasAnswerdEarly == false && timer.isAnsweringQuestion == false) {
+            DisplayAnswer(-1);
+            setButtonState(false);
+        }
+    }
+
     public void setButtonState(bool state) {
         for (int i = 0; i < answerButtons.Length; i++) {
             Button button = answerButtons[i].GetComponent<Button>();
@@ -43,7 +68,7 @@ public class Quiz : MonoBehaviour {
             childButtonText.text = question.GetAnswers(i);
         }
     }
-    public void OnAnswerSelected(int index) {
+    void DisplayAnswer(int index) {
         if (index == question.GetCorrectAnswerIndex()) {
             questionText.text = "Correct!";
 
@@ -55,6 +80,11 @@ public class Quiz : MonoBehaviour {
             Image correctButtonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             correctButtonImage.sprite = correctAnswerSprite;
         }
+    }
+    public void OnAnswerSelected(int index) {
+        hasAnswerdEarly = true;
+        DisplayAnswer(index);
+        timer.CancelTimer();
         setButtonState(false);
     }
 }
