@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: New Question 0
   m_EditorClassIdentifier: 
   question: What was the first commercially successful video game?
+  explaination: Pong was the first commercially successful video game, and it helped
+    to establish the video game industry along with the Magnavox Odyssey. Soon after
+    its release
   answers:
   - Pong
   - Donkey Kong Country

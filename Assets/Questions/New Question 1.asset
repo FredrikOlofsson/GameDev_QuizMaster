@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New Question 1
   m_EditorClassIdentifier: 
   question: What was Sonic the Hedgehos's original name?
+  explaination: The name is an alternative translation of "Mr. Hedgehog", as needlemouse
+    is a literal translation of the Japanese word for hedgehog
   answers:
   - Fast Blue Hedgehog
   - Colin the Hedgehog

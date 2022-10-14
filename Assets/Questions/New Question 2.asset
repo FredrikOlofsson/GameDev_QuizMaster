@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New Question 2
   m_EditorClassIdentifier: 
   question: What is the fictional language in The Sims?
+  explaination: 'Simlish is the fictional language used by Sims. It is assumed that
+    Simlish is the official language of SimNation. '
   answers:
   - Simian
   - Simlish

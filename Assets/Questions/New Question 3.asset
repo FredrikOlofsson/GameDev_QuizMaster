@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: New Question 3
   m_EditorClassIdentifier: 
   question: What is the most sold console in the world?
+  explaination: The PlayStation 2 success is due to several factors for example the
+    length of time it remained on the market before the release of PlayStation 3.
   answers:
   - Game Boy
   - PlayStation 2

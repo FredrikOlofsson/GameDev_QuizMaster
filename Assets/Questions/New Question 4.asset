@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1d5f31df6e54a4fbef52c38d9fead2, type: 3}
   m_Name: New Question 4
   m_EditorClassIdentifier: 
-  question: What year was the first prototype for a home-based video game console
-    developed?
+  question: What year was the first home-based video game console released?
+  explaination: Baer and colleagues produced the first home video game system prototype
+    in 1968 known as the "Brown Box" that allowed people to play action, sports,
+    and other games on a television set.
   answers:
-  - 1967
+  - 1968
   - 1972
   - 1975
   - 1977

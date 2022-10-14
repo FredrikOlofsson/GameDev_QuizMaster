@@ -7,6 +7,8 @@ using UnityEngine;
 public class QuestionSO : ScriptableObject {
     [TextArea(2, 4)]
     [SerializeField] string question = "Insert Question";
+    [TextArea(3, 5)]
+    [SerializeField] string explaination = "Insert explanation of the answer";
     [SerializeField] string[] answers = new string[4];
     [SerializeField] int correctAnswerIndex;
 
@@ -18,5 +20,8 @@ public class QuestionSO : ScriptableObject {
     }
     public string GetAnswers(int index) {
         return answers[index];
+    }
+    public string GetExplaination() {
+        return explaination;
     }
 }

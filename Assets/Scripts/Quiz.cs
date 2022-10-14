@@ -38,7 +38,6 @@ public class Quiz : MonoBehaviour {
 
     [SerializeField] Slider progressBar;
 
-    private int currentScore;
     public bool gameOver;
 
     void Start() {
@@ -75,7 +74,6 @@ public class Quiz : MonoBehaviour {
             DisplayQuestionAndAnswers();
 
         } else {
-            questionText.text = "Game Over! \nScore : " + currentScore;
             timer.enabled = false;
         }
 
@@ -113,8 +111,7 @@ public class Quiz : MonoBehaviour {
         Image buttonImage;
         if (index == currentQuestion.GetCorrectAnswerIndex()) {
             //IMPLEMENT Each question should have a description/explanation of the answer.
-            questionText.text = "Correct!";
-            currentScore++;
+            questionText.text = currentQuestion.GetExplaination();
             
             scoreKeeper.IncrementCorrectAnswers();
 
@@ -124,7 +121,7 @@ public class Quiz : MonoBehaviour {
         } else {
             correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
             //Pressed button > change the text
-            TextMeshProUGUI buttonText = answerButtons[correctAnswerIndex].GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI buttonText = answerButtons[index].GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = "False!";
             //Pressed button > change the border to red
             buttonImage = answerButtons[index].GetComponent<Image>();
@@ -132,6 +129,8 @@ public class Quiz : MonoBehaviour {
             //HighLights the right answer
             Image correctButtonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
             correctButtonImage.sprite = correctAnswerSprite;
+            //Prints the explanaition on the screen
+            questionText.text = currentQuestion.GetExplaination();
         }
         scoreKeeper.IncrementQuestionsSeen();
     }
