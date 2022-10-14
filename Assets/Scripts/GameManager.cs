@@ -15,16 +15,19 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (quiz.gameOver == true) {
+        if (quiz.gameOver == true)
+        {
             quiz.gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
             gameOver.showGameOverText();
         }
     }
-    public void OnReplayLevel() {
+    public void OnReplayLevel()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void OnExitGame() {
+    public void OnExitGame()
+    {
         Application.Quit();
     }
 }

@@ -8,7 +8,8 @@ public class GameOver : MonoBehaviour
     [SerializeField] TextMeshProUGUI finalScoreText;
     [SerializeField] ScoreKeeper scoreKeeper;
 
-    public void showGameOverText() {
+    public void showGameOverText()
+    {
         finalScoreText.text = "Congratulations!\nYour final score was: " + scoreKeeper.CalculateScore() + "%";
     }
 }

@@ -4,7 +4,8 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Quiz Question", fileName = "New Question")]
-public class QuestionSO : ScriptableObject {
+public class QuestionSO : ScriptableObject
+{
     [TextArea(2, 4)]
     [SerializeField] string question = "Insert Question";
     [TextArea(3, 5)]
@@ -12,16 +13,20 @@ public class QuestionSO : ScriptableObject {
     [SerializeField] string[] answers = new string[4];
     [SerializeField] int correctAnswerIndex;
 
-    public string GetQuestion() {
+    public string GetQuestion()
+    {
         return question;
     }
-    public int GetCorrectAnswerIndex() {
+    public int GetCorrectAnswerIndex()
+    {
         return correctAnswerIndex;
     }
-    public string GetAnswers(int index) {
+    public string GetAnswers(int index)
+    {
         return answers[index];
     }
-    public string GetExplaination() {
+    public string GetExplaination()
+    {
         return explaination;
     }
 }
