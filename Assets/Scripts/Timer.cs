@@ -14,10 +14,11 @@ public class Timer : MonoBehaviour {
     void Update() {
         UpdateTimer();
     }
-    public void CancelTimer() {
-        Debug.Log("CancelTimer()");
+    public void SetTimerToZero() {
+        Debug.Log("CancelTimer() Timer Stopped!");
         timerValue = 0;
     }
+ 
     private void UpdateTimer() {
         timerValue -= Time.deltaTime;
 
@@ -35,7 +36,6 @@ public class Timer : MonoBehaviour {
                 isAnsweringQuestion = true;
                 timerValue = timeToCompleteQuestion;
                 loadNextQuestion = true;
-                Debug.Log("loadNext()");    
             }
         }
         //Debug.Log(isAnsweringQuestion + ": " + timerValue + " = " + fillFraction);
