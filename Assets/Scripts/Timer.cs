@@ -15,7 +15,6 @@ public class Timer : MonoBehaviour {
         UpdateTimer();
     }
     public void SetTimerToZero() {
-        Debug.Log("CancelTimer() Timer Stopped!");
         timerValue = 0;
     }
  
@@ -38,7 +37,5 @@ public class Timer : MonoBehaviour {
                 loadNextQuestion = true;
             }
         }
-        //Debug.Log(isAnsweringQuestion + ": " + timerValue + " = " + fillFraction);
     }
-
 }

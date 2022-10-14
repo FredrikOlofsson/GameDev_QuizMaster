@@ -720,7 +720,9 @@ MonoBehaviour:
   correctAnswerSprite: {fileID: 21300000, guid: 2ffa0f6a910b5de4ea13b02354700811, type: 3}
   falseAnswerSprite: {fileID: 21300000, guid: d0f64d7b34faa23409cdda3389ee110d, type: 3}
   timerImage: {fileID: 1158653228}
+  timer: {fileID: 1687109640}
   scoreText: {fileID: 2120932316}
+  scoreKeeper: {fileID: 1645462468}
 --- !u!1 &494993433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,8 +1754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737c664d693e55b48a4a9b5ef0b48471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCompleteQuestion: 2
-  timeToShowCorrectAnswer: 1
+  timeToCompleteQuestion: 15
+  timeToShowCorrectAnswer: 5
   loadNextQuestion: 0
   fillFraction: 0
   isAnsweringQuestion: 0
